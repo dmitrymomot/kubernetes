@@ -2,7 +2,7 @@
 FROM golang:alpine AS container
 RUN apk update && apk upgrade && \
 	apk add --no-cache bash git openssh curl ca-certificates
-COPY . .
+COPY ./main.go /
 RUN go get -d -v ./...
     
 # Go application builder
